@@ -1,0 +1,14 @@
+c:\users\markc\documents\visual studio 2010\Projects\WindowsApplication3\WindowsApplication3\bin\Debug\WindowsApplication3.exe
+c:\users\markc\documents\visual studio 2010\Projects\WindowsApplication3\WindowsApplication3\bin\Debug\WindowsApplication3.pdb
+c:\users\markc\documents\visual studio 2010\Projects\WindowsApplication3\WindowsApplication3\bin\Debug\WindowsApplication3.xml
+c:\users\markc\documents\visual studio 2010\Projects\WindowsApplication3\WindowsApplication3\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\markc\documents\visual studio 2010\Projects\WindowsApplication3\WindowsApplication3\obj\x86\Debug\WindowsApplication3.Resources.resources
+c:\users\markc\documents\visual studio 2010\Projects\WindowsApplication3\WindowsApplication3\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\markc\documents\visual studio 2010\Projects\WindowsApplication3\WindowsApplication3\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\markc\documents\visual studio 2010\Projects\WindowsApplication3\WindowsApplication3\obj\x86\Debug\WindowsApplication3.exe
+c:\users\markc\documents\visual studio 2010\Projects\WindowsApplication3\WindowsApplication3\obj\x86\Debug\WindowsApplication3.xml
+c:\users\markc\documents\visual studio 2010\Projects\WindowsApplication3\WindowsApplication3\obj\x86\Debug\WindowsApplication3.pdb
+C:\Users\markc\Documents\Visual Studio 2010\Projects\WindowsApplication3\WindowsApplication3\obj\x86\Debug\WindowsApplication3.TrailerPrintDialog.resources
+X:\VB Apps\Raven Print Package 00.01\WindowsApplication3\obj\x86\Debug\WindowsApplication3.exe
+X:\VB Apps\Raven Print Package 00.01\WindowsApplication3\obj\x86\Debug\WindowsApplication3.xml
+X:\VB Apps\Raven Print Package 00.01\WindowsApplication3\obj\x86\Debug\WindowsApplication3.pdb
