@@ -649,7 +649,228 @@
         RampROWidth = (CDbl(CB_Width.Text) * 12) - 12.0   ' *** Ramp Rought Opening Width, for 8.5 Wide Only ***
 
         'MsgBox(RampROWidth.ToString("0.0"))
-        
+
+        Dim strFileCk As String
+        Dim MAT As String
+
+        If CB_Trailer.Text = "RAVEN LITE CARGO (STEEL)" Then
+            MAT = "ST"
+        ElseIf CB_Trailer.Text = "RAVAN LITE CARGO (ALUMINUM)" Then
+            MAT = "AL"
+
+            If CB_TorsionAxle.Checked Then
+            Else
+                printcnt = printcnt + 1
+                If CB_Width.Text = "7.0" Or CB_Width.Text = "8.5" Then
+                    fn(printcnt) = "AXLE MOUNT BRKT, ST - 64.0.PDF"
+                Else
+                    If CB_Length.Text = "12" Or CB_CrossMember.Text = "16" Then
+                        fn(printcnt) = "AXLE MOUNT BRKT, ST - 31.0x4.5x20.5.PDF"
+                    ElseIf CB_Length.Text = "10" And CB_CrossMember.Text = "24" Then
+                        'MsgBox(CB_Length.Text)
+                        fn(printcnt) = "AXLE MOUNT BRKT, ST - 31.0x12.5.PDF"
+                    ElseIf CB_Length.Text = "08" And CB_CrossMember.Text = "24" Then
+                        'MsgBox(CB_Length.Text)
+                        fn(printcnt) = "AXLE MOUNT BRKT, ST - 31.0x4.5x28.5.PDF"
+                    End If
+                End If
+            End If
+
+        End If
+
+        If (DL = "ALL") Or (DL = "MTL") Then ' *** METAL CUT LIST ***
+            If CB_Width.Text = "5.0" Or CB_Width.Text = "6.0" Then
+                printcnt = printcnt + 1
+                fn(printcnt) = "MTLCL - " + CB_Width.Text + "x" + CB_Length.Text + "x" + CStr(TlrHt) + NoseConfig + RampOpt + DoorOpt + ".PDF"
+            ElseIf CB_Width.Text = "8.5" Then
+                printcnt = printcnt + 1
+                fn(printcnt) = "MTLCL - " + CB_Width.Text + "x" + CB_Length.Text + "x" + CStr(TlrHt) + NoseConfig + RampOpt + CB_CC.Text + BeaverTail + ".PDF"
+                'MTLCL - 8.5x16x78+0+R+CC+BT
+            Else
+                printcnt = printcnt + 1
+                fn(printcnt) = "MTLCL, " + MAT + " - " + CB_Width.Text + "x" + CB_Length.Text + "x" + CStr(TlrHt) + NoseConfig + RampOpt + ".PDF"
+                ' MTLCL, AL - 5.0x08x66+0-R-DR  
+            End If
+        End If
+
+        If (DL = "ALL") Or (DL = "WOOD") Then ' *** WOOD CUT LIST ***
+            If CB_Width.Text = "5.0" Then
+                printcnt = printcnt + 1
+                fn(printcnt) = "WDCL - " + CB_Width.Text + "x" + CB_Length.Text + "x" + CStr(TlrHt) + NoseConfig + RampOpt + DoorOpt + ".PDF"
+            ElseIf CB_Width.Text = "6.0" Then
+                printcnt = printcnt + 1
+                fn(printcnt) = "WDCL - " + CB_Width.Text + "x" + CB_Length.Text + "x" + CStr(TlrHt) + NoseConfig + RampOpt + ".PDF"
+            ElseIf CB_Width.Text = "7.0" Then
+                printcnt = printcnt + 1
+                fn(printcnt) = "WDCL - " + CB_Width.Text + "x" + CB_Length.Text + "x" + CStr(TlrHt) + NoseConfig + RampOpt + ".PDF"
+            ElseIf CB_Width.Text = "8.5" Then
+                printcnt = printcnt + 1
+                fn(printcnt) = "WDCL - " + CB_Width.Text + "x" + CB_Length.Text + "x" + CStr(TlrHt) + NoseConfig + RampOpt + ".PDF"
+            End If
+        End If
+
+        If (DL = "ALL") Or (DL = "ROF") Then ' ****** ROOF ******
+            printcnt = printcnt + 1
+            If CB_Width.Text = "8.5" Then
+                fn(printcnt) = "ROF, " + MAT + " - " + CB_Width.Text + "x" + CB_Length.Text + "-" + CB_RoofCrossMember.Text + "OC.PDF"
+            Else
+                fn(printcnt) = "ROF, " + MAT + " - " + CB_Width.Text + "x" + CB_Length.Text + ".PDF"
+            End If
+        End If
+
+        If (DL = "ALL") Or (DL = "FRW") Then ' ****** FRONT WALL ******
+            printcnt = printcnt + 1
+            fn(printcnt) = "FRW, " + MAT + " - " + CB_Width.Text + "" + CStr(NoseConfig) + "" + CB_CC.Text + ".PDF"
+        End If
+
+        If (DL = "ALL") Or (DL = "RRW") Then ' ****** REAR WALL ******
+            printcnt = printcnt + 1
+            fn(printcnt) = "RRW, " + MAT + " - " + CB_Width.Text + "x" + CStr(TlrHt) + BeaverTail + ".PDF"
+        End If
+
+        If (DL = "ALL") Or (DL = "RMP") Then ' ****** RAMP ******
+            If CB_RearDoorOpt.Text = "Ramp Doors" Then
+                printcnt = printcnt + 1
+                If CB_Width.Text = "8.5" Then
+                    fn(printcnt) = "RMP, " + MAT + " - " + RampROWidth.ToString("0") + "x" + CStr(TlrHt) + BeaverTail + "+BH.PDF"
+                Else
+                    fn(printcnt) = "RMP, " + MAT + " - " + CB_Width.Text + "x" + CStr(TlrHt) + ".PDF"
+                End If
+            End If
+        End If
+
+        If (DL = "ALL") Or (DL = "SDW") Then ' *** Side Wall ***
+            printcnt = printcnt + 1
+            If CB_Width.Text = "5.0" Then
+                If CBox_Door.Checked Then
+                    fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC+DR-OA.PDF"
+                Else
+                    fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC-DR-OA.PDF"
+                End If
+            ElseIf CB_Width.Text = "8.5" Then
+                fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC.PDF"
+            Else
+                fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC-OA.PDF"
+            End If
+        End If
+
+
+        If (DL = "ALL") Or (DL = "FRM") Then ' *** Frame ***
+            printcnt = printcnt + 1
+            If CBox_5IN_TONGUE.Checked Then
+                fn(printcnt) = "FRM, " + MAT + " - " + CB_Width.Text + "x" + CB_Length.Text + "-" + CB_CrossMember.Text + "OC+2x5TNG.PDF"
+            ElseIf CB_Width.Text = "8.5" Then
+                If CBox_BeaverTail.Checked Then
+                    fn(printcnt) = "FRM, " + MAT + " - " + CB_Width.Text + "x" + CB_Length.Text + "-" + CB_CrossMember.Text + "OC+BT.PDF"
+                Else
+                    fn(printcnt) = "FRM, " + MAT + " - " + CB_Width.Text + "x" + CB_Length.Text + "-" + CB_CrossMember.Text + "OC-BT.PDF"
+                End If
+            Else
+                fn(printcnt) = "FRM, " + MAT + " - " + CB_Width.Text + "x" + CB_Length.Text + "-" + CB_CrossMember.Text + "OC.PDF"
+            End If
+        End If
+
+        For i As Integer = 1 To printcnt
+            strFile = strDirectory + fn(i)
+            strFileCk = FileIO.FileSystem.FileExists(strFile)
+            If System.IO.File.Exists(strFile) Then
+                If System.IO.Directory.Exists(FolderDir) Then
+                    'System.IO.File.Copy(strFile, )
+                Else
+                    System.IO.Directory.CreateDirectory(FolderDir)
+                End If
+                dirfn = FolderDir + "\" + fn(i)
+
+                If System.IO.File.Exists(dirfn) Then
+                    System.IO.File.Delete(dirfn)
+                    System.IO.File.Copy(strFile, dirfn)
+                Else
+                    System.IO.File.Copy(strFile, dirfn)
+                End If
+
+                'strFile = strDirectory + fn(i)
+                psi.UseShellExecute = True
+                psi.Verb = "print"
+                psi.WindowStyle = ProcessWindowStyle.Hidden
+                psi.FileName = strFile
+                Process.Start(psi)
+            Else
+                MsgBox("Drawing does not Exist" + strFile + " " + strFileCk)
+            End If
+        Next
+    End Function
+
+    Function PrintDwg_old(ByVal DL As String)
+        Dim strFile As String
+        Dim psi As New ProcessStartInfo
+        Dim fn(10) As String
+        Dim printcnt As Double
+        Dim NoseConfig As String
+        Dim dirfn As String
+        Dim TlrHt As Double
+        Dim RampROHeight As Double
+        Dim RampROWidth As Double
+        Dim RampOpt As String
+        Dim DoorOpt As String
+        Dim BeaverTail As String
+        ' VARIABLES FOR MTL CUT LIST
+        Dim MTL_CTL_RS_1 As String
+        Dim MTL_HT As Integer
+        Dim MTL_STD_WIDTH As Integer
+        Dim RS_STD_PC_CNT As Double
+        printcnt = 0
+        NoseConfig = "0"
+
+        If CB_Nose.Text = "Flat Nose (+0)" Then
+            NoseConfig = "+0"
+        ElseIf CB_Nose.Text = "Wedge Nose (+2)" Then
+            NoseConfig = "+2"
+        Else
+            MsgBox("Error Nose Config")
+        End If
+
+        If CB_RearDoorOpt.Text = "Ramp Doors" Then
+            RampOpt = "+R"
+        Else
+            RampOpt = "-R"
+        End If
+
+        If CBox_Door.Checked Then
+            DoorOpt = "+DR"
+        Else
+            DoorOpt = "-DR"
+        End If
+
+        If CBox_BeaverTail.Checked Then
+            BeaverTail = "+BT"
+        Else
+            BeaverTail = "-BT"
+        End If
+
+        TlrHt = CDbl(CB_Height.Text) * 12        ' *** Interior Height in inches ***
+        ' ************************************************************************************ mtl cut list
+        MTL_HT = TlrHt + 7
+        MTL_STD_WIDTH = 49
+        'RS_STD_PC_CNT = CB_Length / 4
+
+        'MsgBox(RS_STD_PC_CNT)
+
+        MTL_CTL_RS_1 = CStr(MTL_STD_WIDTH) + " x " + CStr(MTL_HT)
+
+        'MsgBox(MTL_CTL_RS_1)
+        ' ************************************************************************************
+
+        If CBox_BeaverTail.Checked Then
+            RampROHeight = TlrHt + 0.5                 ' *** Ramp Rough Opening Height, for 8.5 Wide Only ***
+            RampROHeight = RampROHeight - 1.0
+        Else
+            RampROHeight = TlrHt - 2.5                 ' *** Ramp Rough Opening Height, for 8.5 Wide Only ***
+        End If
+
+        RampROWidth = (CDbl(CB_Width.Text) * 12) - 12.0   ' *** Ramp Rought Opening Width, for 8.5 Wide Only ***
+
+        'MsgBox(RampROWidth.ToString("0.0"))
+
         Dim strFileCk As String
 
         If CB_Trailer.Text = "RAVEN LITE CARGO (STEEL)" Then
@@ -964,6 +1185,7 @@
     Private Sub CB_TORSION_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_TorsionAxle.CheckedChanged
 
     End Sub
+
 
 
 End Class

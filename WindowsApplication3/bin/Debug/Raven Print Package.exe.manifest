@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Raven Print Package.exe" size="119296">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Raven Print Package.exe" size="124416">
       <assemblyIdentity name="Raven Print Package" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>DgulBp3ftUlVF6pNrZicXtqrAts=</dsig:DigestValue>
+        <dsig:DigestValue>BkTopLrCUxgrwReFw9vb2V8IFOE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
