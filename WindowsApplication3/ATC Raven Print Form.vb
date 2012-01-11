@@ -21,9 +21,9 @@
         Dim VIN = XDocument.Load(FileName)
         Dim price As Double
         If System.IO.File.Exists(FileName) = True Then
-            MsgBox("File Does Exist")
+            'MsgBox("File Does Exist")
         Else
-            MsgBox("File Does Not Exist") ' This does not work!!!
+            'MsgBox("File Does Not Exist") ' This does not work!!!
             'End
         End If
         'Console.WriteLine("Order: ")
@@ -658,7 +658,7 @@
         ElseIf CB_Trailer.Text = "RAVAN LITE CARGO (ALUMINUM)" Then
             MAT = "AL"
 
-            If CB_TorsionAxle.Checked Then
+            If ((DL = "ALL") Or (DL = "FRM")) And CB_TorsionAxle.Checked Then
             Else
                 printcnt = printcnt + 1
                 If CB_Width.Text = "7.0" Or CB_Width.Text = "8.5" Then
