@@ -43,3 +43,18 @@ X:\VB Apps\Raven Print Package 00.06\WindowsApplication3\obj\x86\Release\Raven P
 X:\VB Apps\Raven Print Package 00.06\WindowsApplication3\obj\x86\Release\Raven Print Package.exe
 X:\VB Apps\Raven Print Package 00.06\WindowsApplication3\obj\x86\Release\Raven Print Package.xml
 X:\VB Apps\Raven Print Package 00.06\WindowsApplication3\obj\x86\Release\Raven Print Package.pdb
+X:\VB Apps\frameprints\WindowsApplication3\bin\Release\Raven Print Package.exe.manifest
+X:\VB Apps\frameprints\WindowsApplication3\bin\Release\Raven Print Package.application
+X:\VB Apps\frameprints\WindowsApplication3\bin\Release\Raven Print Package.exe
+X:\VB Apps\frameprints\WindowsApplication3\bin\Release\Raven Print Package.pdb
+X:\VB Apps\frameprints\WindowsApplication3\bin\Release\Raven Print Package.xml
+X:\VB Apps\frameprints\WindowsApplication3\obj\x86\Release\ResolveAssemblyReference.cache
+X:\VB Apps\frameprints\WindowsApplication3\obj\x86\Release\Raven.TrailerPrintDialog.resources
+X:\VB Apps\frameprints\WindowsApplication3\obj\x86\Release\Raven.Resources.resources
+X:\VB Apps\frameprints\WindowsApplication3\obj\x86\Release\GenerateResource.read.1.tlog
+X:\VB Apps\frameprints\WindowsApplication3\obj\x86\Release\GenerateResource.write.1.tlog
+X:\VB Apps\frameprints\WindowsApplication3\obj\x86\Release\Raven Print Package.exe.manifest
+X:\VB Apps\frameprints\WindowsApplication3\obj\x86\Release\Raven Print Package.application
+X:\VB Apps\frameprints\WindowsApplication3\obj\x86\Release\Raven Print Package.exe
+X:\VB Apps\frameprints\WindowsApplication3\obj\x86\Release\Raven Print Package.xml
+X:\VB Apps\frameprints\WindowsApplication3\obj\x86\Release\Raven Print Package.pdb

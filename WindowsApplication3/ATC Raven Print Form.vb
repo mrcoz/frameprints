@@ -323,14 +323,14 @@
         CB_Length.Enabled = True
         CB_Height.Enabled = True
         CB_CrossMember.Enabled = True
-        CB_Nose.Enabled = True
+        'CB_Nose.Enabled = True
 
-        CB_Nose.Items.Clear()
+        'CB_Nose.Items.Clear()
         CB_WallCrossMember.Items.Clear()
         CB_RoofCrossMember.Items.Clear()
-        CB_Nose.Text = "Nose Construction"
-        CB_Nose.Items.Add("Flat Nose (+0)")
-        CB_Nose.Items.Add("Wedge Nose (+2)")
+        'CB_Nose.Text = "Nose Construction"
+        'CB_Nose.Items.Add("Flat Nose (+0)")
+        'CB_Nose.Items.Add("Wedge Nose (+2)")
 
         If CB_Width.Text <> "8.5" Then
             CB_WallCrossMember.Text = "24"
@@ -352,7 +352,33 @@
        
     End Sub
     Private Sub CB_WallCrossMember_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_WallCrossMember.SelectedIndexChanged
-       
+        Dim PRNST As String
+        Dim tmpvar As String
+        PRNST = "Off"
+        tmpvar = SetPrintMenu(PRNST)
+
+        CB_Trailer.Enabled = True
+        CB_Width.Enabled = True
+        CB_Length.Enabled = True
+        CB_Height.Enabled = True
+        CB_CrossMember.Enabled = True
+        CB_Nose.Enabled = True
+
+        If CB_Width.Text <> "8.5" And CB_CrossMember.Enabled = True Then
+            CB_WallCrossMember.Enabled = True
+        ElseIf CB_CrossMember.Enabled = True Then
+            CB_WallCrossMember.Enabled = True
+            CB_RoofCrossMember.Enabled = True
+        Else
+        End If
+
+        CB_Nose.Items.Clear()
+        'CB_WallCrossMember.Items.Clear()
+        'CB_RoofCrossMember.Items.Clear()
+        CB_Nose.Text = "Nose Construction"
+        CB_Nose.Items.Add("Flat Nose (+0)")
+        CB_Nose.Items.Add("Wedge Nose (+2)")
+
     End Sub
 
     Private Sub CB_RoofCrossMember_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_RoofCrossMember.SelectedIndexChanged
