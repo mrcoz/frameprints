@@ -1040,24 +1040,6 @@
                 Else
                     fn(printcnt) = "FRM, AL - " + CB_Width.Text + "x" + CB_Length.Text + "-" + CB_CrossMember.Text + "OC.PDF"
                 End If
-
-                If CB_TorsionAxle.Checked Then
-                Else
-                    printcnt = printcnt + 1
-                    If CB_Width.Text = "7.0" Or CB_Width.Text = "8.5" Then
-                        fn(printcnt) = "AXLE MOUNT BRKT, ST - 64.0.PDF"
-                    Else
-                        If CB_Length.Text = "12" Or CB_CrossMember.Text = "16" Then
-                            fn(printcnt) = "AXLE MOUNT BRKT, ST - 31.0x4.5x20.5.PDF"
-                        ElseIf CB_Length.Text = "10" And CB_CrossMember.Text = "24" Then
-                            'MsgBox(CB_Length.Text)
-                            fn(printcnt) = "AXLE MOUNT BRKT, ST - 31.0x12.5.PDF"
-                        ElseIf CB_Length.Text = "08" And CB_CrossMember.Text = "24" Then
-                            'MsgBox(CB_Length.Text)
-                            fn(printcnt) = "AXLE MOUNT BRKT, ST - 31.0x4.5x28.5.PDF"
-                        End If
-                    End If
-                End If
             End If
 
             If (DL = "ALL") Or (DL = "SDW") Then ' *** Side Wall ***
