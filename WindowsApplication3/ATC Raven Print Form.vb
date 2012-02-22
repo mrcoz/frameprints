@@ -2,7 +2,8 @@
 
     'Dim strDirectory = "X:\Frames - standard\Ravens\REL\PDF\"
     'Dim strDirectory = "\\TS-SERV\Master Records\Stock PDFs\"
-    Dim strDirectory = "\\ERPSERV\Master\M Drive Data\Master Records\Stock PDFs\"
+    'Dim strDirectory = "\\ERPSERV\Master\M Drive Data\Master Records\Stock PDFs\"
+    Dim strDirectory = "\\ERPSERV\Master\M Drive Data\VS3\Production Drawing\Stock PDFs\"
 
     'Dim vinDirectory = "X:\Engineers\MarkCosby\VIN\"
     'Dim vinDirectory = "\\TS-SERV\Master Records\Temp VINs\"
@@ -916,7 +917,7 @@
                 End If
             End If
 
-            If (DL = "ALL") Or (DL = "WOOD") Then ' *** METAL CUT LIST ***
+            If (DL = "ALL") Or (DL = "WOOD") Then ' *** WOOD CUT LIST ***
                 If CB_Width.Text = "5.0" Then
                     printcnt = printcnt + 1
                     fn(printcnt) = "WDCL - " + CB_Width.Text + "x" + CB_Length.Text + "x" + CStr(TlrHt) + NoseConfig + RampOpt + DoorOpt + ".PDF"
