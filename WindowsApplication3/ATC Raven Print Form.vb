@@ -3,7 +3,7 @@
     'Dim strDirectory = "X:\Frames - standard\Ravens\REL\PDF\"
     'Dim strDirectory = "\\TS-SERV\Master Records\Stock PDFs\"
     'Dim strDirectory = "\\ERPSERV\Master\M Drive Data\Master Records\Stock PDFs\"
-    Dim strDirectory = "\\ERPSERV\Master\M Drive Data\VS3\Production Drawing\Stock PDFs\"
+    Dim strDirectory = "\\ERPSERV\Master\M Drive Data\VS1\Production Drawing\Stock PDFs\"
 
     'Dim vinDirectory = "X:\Engineers\MarkCosby\VIN\"
     'Dim vinDirectory = "\\TS-SERV\Master Records\Temp VINs\"
