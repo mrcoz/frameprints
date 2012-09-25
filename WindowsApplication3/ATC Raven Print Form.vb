@@ -1,9 +1,18 @@
 ﻿Public Class TrailerPrintDialog
 
+    '    Sign Certificate Invalid
+    '    I right clicked on the project and selected properties.
+    '    Then I clicked on the signing tab.
+    '    Then I checked the box next to "Sign the Click Once Manifests".
+    '    Then I pressed the button "Create Test Certificate" and followed the process.
+
+    'REV: 09/21/12: Changed Path from Stock PDFs to StockPDFs
+    'REV: 09/25/12: Changed -OA to -WW added +WW to sidewall prints
+
     'Dim strDirectory = "X:\Frames - standard\Ravens\REL\PDF\"
     'Dim strDirectory = "\\TS-SERV\Master Records\Stock PDFs\"
     'Dim strDirectory = "\\ERPSERV\Master\M Drive Data\Master Records\Stock PDFs\"
-    Dim strDirectory = "\\ERPSERV\Master\M Drive Data\VS1\Production Drawing\Stock PDFs\"
+    Dim strDirectory = "\\ERPSERV\Master\M Drive Data\VS1\Production Drawing\StockPDFs\"
 
     'Dim vinDirectory = "X:\Engineers\MarkCosby\VIN\"
     'Dim vinDirectory = "\\TS-SERV\Master Records\Temp VINs\"
@@ -770,14 +779,14 @@
             printcnt = printcnt + 1
             If CB_Width.Text = "5.0" Then
                 If CBox_Door.Checked Then
-                    fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC+DR-OA.PDF"
+                    fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC+DR-WW.PDF"
                 Else
-                    fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC-DR-OA.PDF"
+                    fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC-DR-WW.PDF"
                 End If
             ElseIf CB_Width.Text = "8.5" Then
-                fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC.PDF"
+                fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC+WW.PDF"
             Else
-                fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC-OA.PDF"
+                fn(printcnt) = "SDW, " + MAT + " - " + CB_Length.Text + "x" + CStr(TlrHt) + "-" + CB_WallCrossMember.Text + "OC-WW.PDF"
             End If
         End If
 
